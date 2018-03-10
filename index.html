@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hikky Hero</title>
+    <style type="text/css">
+	body,
+	a,
+	a:link {
+		cursor: url(cursor.cur), default;
+	}
+	
+	a:hover {
+		cursor: url(cursor2.cur), wait;
+	}
+	</style>
+ 	<link href="style/font.css" rel="stylesheet">
+     <link href="style/hover.css" rel="stylesheet">
+      <link href="style/animate.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+<video id="player" controls autoplay loop >
+   <source src="video/videos.mp4" type="video/mp4">
+</video><canvas id="canvas"></canvas>
+<script>
+	var x = document.getElementById("player").volume = 0.3;
+</script>
+<div class="home animated bounceInDown">
+    <div class="container">
+        <a class="logo" href="#">Hikky Hero</a>
+        <a href="#" class='open-modal' data-modal="#modal2">Контакты</a>
+        <a href="#" class='open-modal' data-modal="#modal1">Кто я?</a>
+        <a href="#">Дом милый дом</a>
+            </div>
+</div>
+
+<div class="page">
+    <div class="container">
+        <h1 class="animated infinite bounce"> ✗ Hikky × Hero ✗  </h1></h1>
+        <h3>Задрот Лолки и недо Web разработчик</h3>
+
+        <div class="soc animated flash">
+            <a class="hvr-pulse-shrink" target="_blank" href="https://vk.com/id456865552"><img src="style/vk.png"></a>
+
+            <a class="hvr-pulse-shrink" target="_blank" href="https://discord.gg/yduPEh9"><img src="style/discord.png"></a>
+
+           <a class="hvr-pulse-shrink" target="_blank" href="https://github.com/microotacu"><img src="style/github.png"></a>
+        </div>
+        <div class="footer">
+            <p>Заместо футера, фантазии не хватило</p>
+        </div>
+    </div>
+</div>
+
+<div class='modal' id='modal1'>
+    <div class='content'>
+        <h1 class='title'>Обо мне</h1>
+        <p>
+                Я хороший игрок в Лолку и плохой Web разработчик, к сожалению.. 
+        </p>
+        <a class='btn close-modal' data-modal="#modal1" href="#">Закрыть</a>
+    </div>  
+</div>
+
+<div class='modal' id='modal2'>
+    <div class='content'>
+        <h1 class='title'>Почта</h1>
+        <p>
+                E-mail: hikkyhero@yahoo.com
+        </p>
+        <a class='btn close-modal' data-modal="#modal2" href="#">Закрыть</a>
+    </div>  
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+    <script src='js/hx.js'></script>
+	<script src='js/mouse.js'></script>
+	<script src='js/vendor.js'></script>
+</body>	
+<script>
+$(function() {
+	var title = document.title,
+		animSeq = ["/", "-", "\\", "|", "-"],
+		animIndex = 0,
+		titleIndex = 0;
+
+	function doInverseSpinZeroPitch() {
+		var loadTitle = title.substring(0, titleIndex);
+		if(titleIndex > title.length) {
+			animIndex = 0;
+			titleIndex = 0
+		}
+		if(animIndex > 3) {
+			titleIndex++;
+			animIndex = 0
+		}
+		document.title = loadTitle + animSeq[animIndex];
+		animIndex++
+	}
+	window.setInterval(doInverseSpinZeroPitch, 150);
+});
+</script>
+<script type="text/javascript">
+document.onkeydown = function(e) {
+	e = e || window.event;
+	if(e.keyCode == 85 | e.keyCode == 83) {
+		return false;
+	}
+	return true;
+}
+
+<script type="text/javascript">
+window.onkeydown = function(evt) {
+	if(evt.keyCode == 123) return false;
+};
+window.onkeypress = function(evt) {
+	if(evt.keyCode == 123) return false;
+};
+</script>
+<script>
+document.onkeydown = function(e) {
+	if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {}
+	return false;
+};
+
+function click() {
+	if(event.button == 2 || event.button == 3) {
+		oncontextmenu = 'return false';
+	}
+}
+document.onmousedown = click;
+document.oncontextmenu = new Function("return false;")
+</script>
+<script language=JavaScript>
+    <!--
+    var message = "Незя, незя залазить в код сайта";
+    ///////////////////////////////////
+    function clickIE4() {
+        if(event.button == 2) {
+            alert(message);
+            return false;
+        }
+    }
+
+    function clickNS4(e) {
+        if(document.layers || document.getElementById && !document.all) {
+            if(e.which == 2 || e.which == 3) {
+                alert(message);
+                return false;
+            }
+        }
+    }
+    if(document.layers) {
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown = clickNS4;
+    } else if(document.all && !document.getElementById) {
+        document.onmousedown = clickIE4;
+    }
+    document.oncontextmenu = new Function("alert(message);return false")
+        // -->
+    </script>
+<script>
+ //TIMESTAMP
+(function() {
+  setInterval(function() {
+    var now, timestamp;
+    timestamp = new Date(1987, 5, 30);
+    now = new Date();
+    return $('#time').text(((now - timestamp) / 1000).toFixed(0));
+  }, 1000);
+}).call(this);
+
+$(window).on('resize', function(){
+  reinit();
+});
+
+//CANVAS
+$(function(){
+    var canvas = document.querySelector('canvas'),
+      ctx = canvas.getContext('2d'),
+      color = '#ffffff';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = 'block';
+    ctx.fillStyle = color;
+    ctx.lineWidth = .1;
+    ctx.strokeStyle = color;
+
+    var mousePosition = {
+        x: 30 * canvas.width / 100,
+        y: 30 * canvas.height / 100
+    };
+
+    var dots = {
+        nb: 150,
+        distance: 100,
+        d_radius: 150,
+        array: []
+    };
+
+    function Dot(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.vx = -.5 + Math.random();
+        this.vy = -.5 + Math.random();
+
+        this.radius = Math.random();
+    }
+
+    Dot.prototype = {
+        create: function(){
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+            ctx.fill();
+        },
+
+        animate: function(){
+            for(i = 0; i < dots.nb; i++){
+
+                var dot = dots.array[i];
+
+                if(dot.y < 0 || dot.y > canvas.height){
+                    dot.vx = dot.vx;
+                    dot.vy = - dot.vy;
+                }
+                else if(dot.x < 0 || dot.x > canvas.width){
+                    dot.vx = - dot.vx;
+                    dot.vy = dot.vy;
+                }
+                dot.x += dot.vx;
+                dot.y += dot.vy;
+            }
+        },
+
+        line: function(){
+            for(i = 0; i < dots.nb; i++){
+                for(j = 0; j < dots.nb; j++){
+                    i_dot = dots.array[i];
+                    j_dot = dots.array[j];
+
+                    if((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > - dots.distance && (i_dot.y - j_dot.y) > - dots.distance){
+                        if((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > - dots.d_radius && (i_dot.y - mousePosition.y) > - dots.d_radius){
+                            ctx.beginPath();
+                            ctx.moveTo(i_dot.x, i_dot.y);
+                            ctx.lineTo(j_dot.x, j_dot.y);
+                            ctx.stroke();
+                            ctx.closePath();
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    function createDots(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for(i = 0; i < dots.nb; i++){
+            dots.array.push(new Dot());
+            dot = dots.array[i];
+
+            dot.create();
+        }
+
+        dot.line();
+        dot.animate();
+    }
+
+    $('canvas').on('mousemove mouseleave', function(e){
+        if(e.type == 'mousemove'){
+            mousePosition.x = e.pageX;
+            mousePosition.y = e.pageY;
+        }
+        if(e.type == 'mouseleave'){
+            mousePosition.x = canvas.width / 2;
+            mousePosition.y = canvas.height / 2;
+        }
+    });
+    setInterval(createDots, 1000/30);   
+});   
+
+</script>>
+</html>

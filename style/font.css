@@ -1,0 +1,119 @@
+body { font-family: Roboto; overflow-x: hidden; background: black; overflow-y: hidden; margin:0; }
+
+video{
+   position:absolute;
+   z-index:-1;
+   min-width:100%;
+   min-height:100%;
+   margin-top: 0px;
+   overflow:hidden;
+   opacity: 0.6;
+}
+
+canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+.home { padding-top: 25px; }
+.home .container { max-width: 950px; margin: 0 auto; }
+.home .container a { float: right; margin: 0px 10px 0px 10px; text-decoration: none; color: white; font-size: 16px; }
+.home .container .logo { margin-top: -2px; font-weight: 700; float: left; font-size: 20px; }
+.home .container a:hover { margin-top: 1px; }
+.home .container .logo:hover { margin-top: -1px; }
+
+.page { padding-top: 100px; }
+.page .container { max-width: 950px; margin: 0 auto; }
+.page .container h1 { text-align: center; color: white; font-size: 65px; }
+.page .container h3 { text-align: center; color: lightgray; font-weight: 400; margin-top: -15px; }
+
+.page .container .soc { padding-top: 75px; text-align: center; }
+.page .container .soc a { margin: 0px 12px 0px 12px; }
+
+.page .container .footer { padding-top: 100px; }
+.page .container .footer p { color: gray; text-align: center; }
+
+
+
+
+
+
+
+
+
+.btn {
+  padding: 20px 50px;
+  display: inline-block;
+  background: black;
+  color: white;
+  margin-top: 17px;
+  text-decoration: none;
+  transition: 0.35s ease-in-out;
+  font-weight: 700;
+}
+.btn:hover {
+  background: black;
+}
+
+.overlay {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.overlay.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+.overlay .modal {
+  background: white;
+  text-align: center;
+  padding: 40px 80px;
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease-in-out;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.overlay .modal p span {
+  font-weight: 700;
+}
+.overlay .modal.open {
+  opacity: 1;
+  pointer-events: inherit;
+}
+.overlay .modal.open .content {
+  transform: translate(0, 0px);
+  opacity: 1;
+}
+.overlay .modal .content {
+  transform: translate(0, -10px);
+  opacity: 0;
+  transition: 0.35s ease-in-out;
+}
+.overlay .modal .title {
+  margin-top: 0;
+}
+
+
+
+
+
+
